@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Blogs</title>
+
+<style>
+    .sq-img {
+        object-fit: cover;
+        object-position: center center;
+        width: 240px;
+        height: 240px;
+    }
+</style>
+{% endblock head %}
+
+{% block body %}
+
+<div class="container my-5 rounded-3 py-4 px-4">
+    <div class="row justify-content-evenly gap-5">
+        {% for blog in blogs %}
+        <div class="col-md-3 col-11 px-2 pt-3 text-center" style="border: 2px solid white;">        
+            <a href="./blogpost/{{blog.blogID}}" class="text-decoration-none text-white">
+                <img src="{{blog.thumbnail.url}}" class="sq-img" alt="{{blog.title}}">
+                <h4 class="mt-2 mb-1">{{blog.title}}</h4>
+                <p>{{blog.metadetail}}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}

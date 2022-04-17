@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Blog | {{blog.title}}</title>
+{% endblock head %}
+
+{% block body %}
+
+<div class="container my-5 rounded-3 py-4 px-4">
+    <img src="{{blog.image.url}}" class="col-12" alt="{{blog.title}}">
+    <h2 class="mt-4 display-2 fw-bold">{{blog.title}}</h2>
+    <p class="fs-4">{{blog.body}}</p>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+nav {
+    background: rgb(20, 20, 20);
+}
+
+nav h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+nav h1 a:hover {
+    color: white;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: rgb(210, 208, 208);
+}
+
+.scdown a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.scdown a:hover {
+    color: rgb(210, 208, 208);
+}
+
+.hero {
+    height: 72vh;
+    overflow-x: hidden;
+}
+
+.hero h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.form {
+    background: rgb(36, 36, 36);
+    border-radius: 8px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+#contact {
+    background-color: rgb(36, 36, 36);
+    border-radius: 8px;
+}
+
+footer {
+    background: rgb(36, 36, 36);
+}

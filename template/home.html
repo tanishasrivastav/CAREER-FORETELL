@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Home</title>
+{% endblock head %}
+
+{% block body %}
+
+<div class="hero container">
+    <div class="row mt-5">
+        <div class="col-md-6 col-12 my-auto">
+            <h2>Are you looking for a career prediction?</h2>
+            <p>
+                If choosing the correct career is your dream, making it simple is ours. Share your dream aspirations and we will make it happen for you.
+            </p>
+        </div>
+        <div class="col-md-6 col-12">
+            <img src="{% static 'img/hero.jpg' %}" class="col-10 rounded-3" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="text-center scdown">
+    <a href="#form"><i class="bi bi-chevron-compact-down fs-2"></i></a>
+</div>
+
+<div class="form container my-5" id="form">
+    <h3 class="text-center pt-3">Grad Train Predictor</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row mx-5 py-3">
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Name:</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Age:</label>
+                <input type="text" name="age" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">School Name:</label>
+                <input type="text" name="school" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Email:</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Marks in Matricualtion:</label>
+                <input type="text" name="marks10" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Marks in Intermediate:</label>
+                <input type="text" name="marks12" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Marks in Enterance Exam:</label>
+                <input type="text" name="marksent" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <label for="">Your Intrest:</label>
+                <select name="intrest" id="intrest" class="form-select">
+                    <option value="">-- Select your option --</option>
+                    <option value="coding">Coding</option>
+                    <option value="current affairs">Current Affairs</option>
+                    <option value="healthcare">Health Care</option>
+                    <option value="law">Law</option>
+                    <option value="modelling">Modelling</option>
+                </select>
+            </div>
+            <div class="col-md-6 col-12 my-2 mx-auto d-none" id="submit">
+                <input type="submit" class="form-control" value="Predict">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    setInterval(function check() {
+        let intrest = document.getElementById('intrest').value;
+        let submit = document.getElementById('submit');
+        if(intrest!='' && submit.classList.contains('d-none')==true) {
+            submit.classList.remove('d-none');
+        } else if(submit.classList.contains('d-none')==false && intrest=='') {
+            submit.classList.add('d-none');
+        }
+    }, 200);
+</script>
+
+{% endblock body %}

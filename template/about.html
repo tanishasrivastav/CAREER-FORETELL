@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>About us</title>
+{% endblock head %}
+
+{% block body %}
+
+<div class="container mt-3 mb-5">
+    <div class="text-center col-10 mx-auto" id="about">
+        <h2 class="text-center display-4 fw-bold">About us</h2>
+        <img src="{% static 'img/about.jpg' %}" class="col-12" alt="About">
+        <p class="text-justify mt-3"> 
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam laboriosam illo dolore recusandae enim dolorum molestiae sequi sint odio voluptates animi aut, obcaecati numquam, nulla dolor, alias facilis. Officiis nihil velit, quibusdam mollitia doloribus doloremque, rerum dicta tempore facere qui natus maiores aliquid fuga. Iste alias ullam optio veniam totam laborum, velit suscipit maxime adipisci eius quaerat, esse qui consequatur quisquam excepturi, pariatur magni dolorem aliquam nam repellendus corporis neque?
+        </p>
+        <ul class="text-start">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet.</li>
+        </ul>
+        <p class="text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi debitis tenetur illo perferendis labore nesciunt deleniti omnis modi aliquid, illum odio distinctio ducimus dolorem corrupti. Deleniti illum excepturi non dignissimos? Ea doloribus numquam in fuga velit dolore, molestiae amet est pariatur culpa alias recusandae iste excepturi quo eveniet similique sed?
+        </p>
+    </div>
+    <div id="contact" class="col-10 mx-auto px-5 mt-5 pt-3 pb-5">
+        <h3 class="display-4 fw-bold">Contact Us</h3>
+        <p class="ms-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, eaque?</p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 col-11">
+                <div class="row justify-content-center">
+                    <div class="col-11 px-3 py-2 rounded-2" style="border: 2px solid white;">
+                        <div class="row">
+                            <div class="col-4 justify-content-center align-items-center d-flex">
+                                <i class="bi bi-geo-alt fs-3"></i>
+                            </div>
+                            <div class="col-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 px-3 py-2 mt-3 rounded-2" style="border: 2px solid white;">
+                        <div class="row">
+                            <div class="col-4 justify-content-center align-items-center d-flex">
+                                <i class="bi bi-envelope fs-3"></i>
+                            </div>
+                            <div class="col-8">
+                                career@test.com<br>
+                                planning@test.com<br>
+                                foretell@test.com<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-11">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <input type="text" class="form-control" placeholder="Name" name="name">
+                        </div>
+                        <div class="col-md-6 col-12 mt-3 mt-md-0">
+                            <input type="email" class="form-control" placeholder="Email" name="email">
+                        </div>
+                        <div class="col-md-6 col-12 mt-3">
+                            <input type="tel" class="form-control" placeholder="Contact" name="contact">
+                        </div>
+                        <div class="col-md-6 col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Subject" name="subject">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <textarea name="message" class="form-control" placeholder="Message" rows="4"></textarea>
+                        </div>
+                        {% if message %}
+                        <div class="col-11 mt-3 text-center mx-auto rounded-3" style="background: #00f609;">
+                            <p class="pb-2 pt-1 my-0">
+                                {{message}}
+                            </p>
+                        </div>
+                        {% endif %}
+                        <div class="col-6 mx-auto mt-3">
+                            <input type="submit" class="btn btn-outline-light col-12" value="Send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}
