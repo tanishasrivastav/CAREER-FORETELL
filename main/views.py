@@ -1,13 +1,9 @@
-import email
-import re
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from .models import Blog
 from .models import Contact
 
 # ML
-import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder  
 from sklearn.linear_model import LogisticRegression
@@ -18,13 +14,18 @@ from sklearn.model_selection import train_test_split
 def home(request):
     if(request.method == 'POST'):
 
+        name = request.POST['name']
+        age = request.POST['age']
+
+        school = request.POST['school']
+        email = request.POST['email']
+
         ten = int(request.POST['marks10'])
         twelve = int(request.POST['marks12'])
         enterance = int(request.POST['marksent'])
         intrest = request.POST['intrest']
 
         inp = [ten, twelve, enterance, intrest]
-        print(inp)
 
         fs = FileSystemStorage()
         data = fs.open('final_dataset.csv')
@@ -46,8 +47,8 @@ def home(request):
 
         output=reg.predict(inp)[0]
 
-        # return render(request, 'output.html')
-        return render(request, 'output.html', {"output":output})
+        return render(request, 'output.html', {"output":output, "name":name, "age":age, "ten":ten, "twelve":twelve, "entrance":enterance, "interest":intrest})
+        
     return render(request, 'home.html')
 
 def blogs(request):

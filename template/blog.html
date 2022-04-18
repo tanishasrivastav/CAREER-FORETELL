@@ -10,7 +10,10 @@
 <div class="container my-5 rounded-3 py-4 px-4">
     <img src="{{blog.image.url}}" class="col-12" alt="{{blog.title}}">
     <h2 class="mt-4 display-2 fw-bold">{{blog.title}}</h2>
-    <p class="fs-4">{{blog.body}}</p>
+    <div class="fs-5">
+        {{blog.body|linebreaks}}
+    </div>
+    
 </div>
 
 {% endblock body %}

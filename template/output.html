@@ -7,6 +7,44 @@
 
 {% block body %}
 
-{{output}}
+<h2 class="mt-5 mb-3 display-5 text-center">You should start to pursue {{output}}</h2>
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_21759ndg.json"  background="transparent"  speed="1" class="col-4 mx-auto" loop autoplay></lottie-player>
+
+<div class="container text-center mb-5">
+    <p class="fs-4">Hi {{name}}, we analyzed your data and found that you should concentrate on {{output}}</p>
+    <hr>
+    <h4 class="mt-4 ">In order to present the above analysis, we used the following data:</h4>
+    <div class="col-6 mx-auto mt-3">
+        <table class="table text-white">
+            <tbody>
+            <tr>
+                <th scope="row">Name</th>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Age</th>
+                <td>{{age}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Marks in Matricualtion:</th>
+                <td>{{ten}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Marks in Intermediate:</th>
+                <td>{{twelve}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Marks in Enterance Exam:</th>
+                <td>{{entrance}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Your Interest:</th>
+                <td>{{interest}}</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+</div>
+
 
 {% endblock body %}
